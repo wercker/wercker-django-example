@@ -17,3 +17,4 @@ build:
         name: extension test
         code: |
           PGPASSWORD=wercker psql -h $WERCKER_POSTGRESQL_HOST -p $WERCKER_POSTGRESQL_PORT -U postgres -d werckerdb1 -c 'CREATE EXTENSION IF NOT EXISTS hstore;'
+          PGPASSWORD=wercker psql -h $WERCKER_POSTGRESQL_HOST -p $WERCKER_POSTGRESQL_PORT -U postgres -d werckerdb1 -c 'CREATE EXTENSION IF NOT EXISTS pgcrypto;'

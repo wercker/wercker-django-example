@@ -14,3 +14,6 @@ build:
         name: run unit tests
         code: |
           python manage.py test -v2
+        name: extension test
+        code: |
+          "psql -U postgres -d werckerdb1 -c \"CREATE EXTENSION IF NOT EXISTS hstore\";

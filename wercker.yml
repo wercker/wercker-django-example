@@ -14,7 +14,6 @@ build:
         name: run unit tests
         code: |
           python manage.py test -v2
-          export PGPASSWORD=wercker
         name: extension test
         code: |
-          psql -h $WERCKER_POSTGRESQL_HOST -p $WERCKER_POSTGRESQL_PORT -U postgres -d werckerdb1 -c 'CREATE EXTENSION IF NOT EXISTS hstore;'
+          PGPASSWORD=wercker psql -h $WERCKER_POSTGRESQL_HOST -p $WERCKER_POSTGRESQL_PORT -U postgres -d werckerdb1 -c 'CREATE EXTENSION IF NOT EXISTS hstore;'
